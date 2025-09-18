@@ -12,6 +12,7 @@ export type Showtime = {
   auditorium: string;
   capacity: number;
   reserved: number;
+  priceCents: number;
 };
 
 export const movies: Movie[] = [
@@ -25,11 +26,11 @@ function inHours(h: number) {
 }
 
 export const showtimes: Showtime[] = [
-  { id: "s1", movieId: "m1", startTimeIso: inHours(1), auditorium: "Screen 1", capacity: 120, reserved: 18 },
-  { id: "s2", movieId: "m1", startTimeIso: inHours(3), auditorium: "Screen 2", capacity: 100, reserved: 88 },
-  { id: "s3", movieId: "m2", startTimeIso: inHours(2), auditorium: "Screen 1", capacity: 120, reserved: 120 },
-  { id: "s4", movieId: "m2", startTimeIso: inHours(5), auditorium: "Screen 3", capacity: 80, reserved: 20 },
-  { id: "s5", movieId: "m3", startTimeIso: inHours(4), auditorium: "Screen 2", capacity: 100, reserved: 55 },
+  { id: "s1", movieId: "m1", startTimeIso: inHours(1), auditorium: "Screen 1", capacity: 120, reserved: 18, priceCents: 1500 },
+  { id: "s2", movieId: "m1", startTimeIso: inHours(3), auditorium: "Screen 2", capacity: 100, reserved: 88, priceCents: 1500 },
+  { id: "s3", movieId: "m2", startTimeIso: inHours(2), auditorium: "Screen 1", capacity: 120, reserved: 120, priceCents: 1400 },
+  { id: "s4", movieId: "m2", startTimeIso: inHours(5), auditorium: "Screen 3", capacity: 80, reserved: 20, priceCents: 1400 },
+  { id: "s5", movieId: "m3", startTimeIso: inHours(4), auditorium: "Screen 2", capacity: 100, reserved: 55, priceCents: 1300 },
 ];
 
 export type Availability = "余裕あり" | "残席わずか" | "完売";

@@ -25,8 +25,8 @@ export default function ShowtimePage({ params }: { params: { showtimeId: string 
           <StatusChip label={av} />
           <span className="text-sm text-gray-600">残 {remainingSeats(st)} / {st.capacity}</span>
         </div>
-        <Link className={`px-4 py-2 rounded ${av === "完売" ? "bg-gray-300 text-gray-600 cursor-not-allowed" : "bg-blue-600 text-white"}`} href={av === "完売" ? "#" : "/auth/login"} aria-disabled={av === "完売"}>
-          予約に進む（ログイン）
+        <Link className={`px-4 py-2 rounded ${av === "完売" ? "bg-gray-300 text-gray-600 cursor-not-allowed" : "bg-blue-600 text-white"}`} href={av === "完売" ? "#" : `/booking/${st.id}`} aria-disabled={av === "完売"}>
+          座席を選ぶ
         </Link>
       </div>
       <p className="text-xs text-gray-500">注: 本モックでは空席数を概算表示しています（座席選択は未接続）。</p>
